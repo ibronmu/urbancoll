@@ -1,0 +1,84 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+// By default the scaffold uses SQLite for quick local development.
+// To switch to Postgres for production:
+// 1. Change provider to "postgresql" below and set DATABASE_URL to your Postgres connection string.
+// 2. Run `npx prisma generate` and `npx prisma migrate deploy` against your Postgres database.
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  password  String
+  firstName String?
+  lastName  String?
+  role      String   @default("CUSTOMER")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  orders    Order[]
+  vendor    Vendor?
+}
+
+model Vendor {
+  id           String    @id @default(cuid())
+  businessName String
+  description  String?
+  products     Product[]
+  ownerId      String?   @unique
+  owner        User?     @relation(fields: [ownerId], references: [id])
+  commission   Float     @default(0.10) // default 10% commission
+  createdAt    DateTime  @default(now())
+}
+
+model Product {
+  id          String   @id @default(cuid())
+  vendor      Vendor   @relation(fields: [vendorId], references: [id])
+  vendorId    String
+  name        String
+  description String?
+  price       Float
+  stock       Int      @default(0)
+  category    String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  orderItems  OrderItem[]
+}
+
+model Order {
+  id         String   @id @default(cuid())
+  customer   User     @relation(fields: [customerId], references: [id])
+  customerId String
+  total      Float
+  status     String   @default("PENDING")
+  items      OrderItem[]
+  payment    Payment?
+  createdAt  DateTime @default(now())
+}
+
+model OrderItem {
+  id        String   @id @default(cuid())
+  order     Order    @relation(fields: [orderId], references: [id])
+  orderId   String
+  product   Product  @relation(fields: [productId], references: [id])
+  productId String
+  quantity  Int
+  price     Float
+}
+
+model Payment {
+  id         String   @id @default(cuid())
+  order      Order    @relation(fields: [orderId], references: [id])
+  orderId    String   @unique
+  provider   String
+  providerId String
+  amount     Float
+  captured   Boolean  @default(false)
+  createdAt  DateTime @default(now())
+}
+
+// Note: Role and OrderStatus are represented as strings for SQLite compatibility.
