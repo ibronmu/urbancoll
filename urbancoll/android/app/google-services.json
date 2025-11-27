@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "361846858228",
+    "project_id": "urbancoll-89617707-90dc8",
+    "storage_bucket": "urbancoll-89617707-90dc8.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:361846858228:android:f3486f23894c61269159a1",
+        "android_client_info": {
+          "package_name": "com.example.urbancoll"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCWQNN549rlgj_ZL4es9QPrGPKpUGTYgHY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -4,7 +4,7 @@ UrbanColl is a modern e-commerce application built with Flutter and Firebase. It
 
 ## Live Demo
 
-You can view the live application at [urbancoll.web.app](https://urbancoll.web.app).
+You can view the live application at [urbancoll-89617707-90dc8.web.app](https://urbancoll-89617707-90dc8.web.app).
 
 ## Features
 
