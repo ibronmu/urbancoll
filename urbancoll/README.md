@@ -13,19 +13,34 @@ You can view the live application at [urbancoll-89617707-90dc8.web.app](https://
 ## Features
 
 *   **Responsive Design**: Looks great on both mobile and web.
-*   **Firebase Authentication**: Secure user login and registration.
-*   **Product Catalog**: Browse a grid of urban fashion products.
+*   **Firebase Authentication**: Secure user login and registration with email and password.
+*   **User Roles**: Separate sign-up and functionality for regular users and vendors.
+*   **Product Catalog**: Browse a grid of urban fashion products with search and filtering.
+*   **Product Details**: View detailed information about each product, including images, description, price, and customer reviews.
 *   **Shopping Cart**: Add and manage items in your cart.
+*   **Checkout Process**: A streamlined checkout process to place orders.
+*   **Order Management**: View and track your order history.
+*   **Vendor Dashboard**: A dedicated dashboard for vendors to manage their products and view orders.
+*   **Add and Manage Products**: Vendors can add new products and manage their existing inventory.
+*   **Customer Reviews**: Users can leave reviews and ratings for products.
+*   **Real-time Notifications**: Receive real-time notifications for important events.
+
+## User Roles
+
+*   **User**: Can browse products, add items to the cart, checkout, view order history, and leave reviews.
+*   **Vendor**: Can add and manage products, view and manage orders for their products, and have a dedicated vendor profile.
 
 ## Project Structure
 
 The project is organized into the following main directories:
 
 *   `lib/`: Contains all the Dart code for the Flutter application.
-    *   `screens/`: Contains the UI for each screen of the app (e.g., `home_screen.dart`, `auth_screen.dart`).
+    *   `screens/`: Contains the UI for each screen of the app, organized by feature (e.g., `home`, `auth`, `cart`, `product`, `profile`, `vendor`).
     *   `widgets/`: Contains reusable UI components (e.g., `custom_button.dart`, `product_card.dart`).
-    *   `models/`: Contains the data models for the app (e.g., `product.dart`).
+    *   `models/`: Contains the data models for the app (e.g., `product.dart`, `app_user.dart`, `order.dart`).
+    *   `services/`: Contains the business logic and services for interacting with Firebase and other APIs (e.g., `auth_service.dart`, `firestore_service.dart`, `cart_service.dart`).
     *   `main.dart`: The entry point of the application.
+    *   `theme.dart`: Defines the application's theme and styling.
     *   `firebase_options.dart`: **(Git-ignored)** Contains the Firebase configuration for your project.
 
 ## Getting Started
