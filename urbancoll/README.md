@@ -2,6 +2,10 @@
 
 UrbanColl is a modern e-commerce application built with Flutter and Firebase. It offers a seamless shopping experience for the latest urban fashion trends. The app is designed to be fully responsive, providing an optimal user experience on both mobile and web platforms.
 
+## GitHub Repository
+
+The source code for this project is available on GitHub at [https://github.com/ibronmu/urbancoll.git](https://github.com/ibronmu/urbancoll.git).
+
 ## Live Demo
 
 You can view the live application at [urbancoll-89617707-90dc8.web.app](https://urbancoll-89617707-90dc8.web.app).
@@ -37,7 +41,7 @@ To get a local copy up and running, follow these simple steps.
 
 1.  **Clone the repo**
     ```sh
-    git clone https://github.com/your_username/urbancoll.git
+    git clone https://github.com/ibronmu/urbancoll.git
     ```
 2.  **Install packages**
     ```sh
